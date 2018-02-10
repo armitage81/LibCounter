@@ -92,6 +92,8 @@ public class LibCounterServiceImpl implements LibCounterService {
 				
 			}
 
+			executor.shutdown();
+			
 			for (Future<List<LibraryInfo>> future : futures) {
 				allLibraryInfos.addAll(future.get());
 			}
